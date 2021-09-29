@@ -1,14 +1,15 @@
+import template from './template'
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
+event.respondWith(handleRequest(evnt.request))
 })
-
-import template from './template'
 /**
  * Respond with hello worker text
  * @param {Request} request
  */
 async function handleRequest(request) {
-  return new Response('Hello worker!', {
+  return new Response(template(), {
     headers: { 'content-type': 'text/html' },
   })
 }
